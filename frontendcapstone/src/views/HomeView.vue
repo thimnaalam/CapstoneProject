@@ -1,18 +1,44 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="background-video">
+    <video autoplay loop muted>
+      <source src="../assets/onair.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="content">
+     Radio Khaltsha
+    </div>
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+<style scoped>
+.background-video {
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  width: 1000px;
+  height: 5000px;
+  /* overflow: hidden; */
+  z-index: -1;
+   object-fit: cover;
+ 
 
-export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
 }
-</script>
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2000px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+
+  position: relative; 
+  z-index: 1; 
+  color: black;
+
+}
+</style>
+
