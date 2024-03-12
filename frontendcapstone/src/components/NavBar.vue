@@ -58,7 +58,5 @@
     width: 10%;
     height: 10%;
  }
-/* .nav-item{
-  font-size: xx-large;
-} */
+
  </style>
