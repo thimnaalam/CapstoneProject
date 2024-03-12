@@ -15,6 +15,7 @@
 </div>
     <h2 class="text-white">About</h2>
     <div class="flex-container">
+      <h3 class="text-white" id="sub1">Who are we?</h3>
       <!-- Image on the left -->
       <div class="image-container">
         <img class="img-fluid" loading="lazy" src="../assets/image.webp" alt="Your Image">
@@ -22,13 +23,14 @@
 
       <!-- Paragraphs on the right -->
       <div class="paragraph-container">
-        <p class="container">
+        <p class="container text-white">
           Radio Khaltsha is by youth for youth.Number one youth radio station in Western Cape, based in Cape Town, Khayelitsha, the second biggest township in South Africa. Radio Khaltsha is owned by Yes Media House (Pty) Ltd in Khayelitsha.This initiative is by youth for youth. This radio station exist because of you (artists), to express yourself in an artistic way, we believe that every artist has his/her way of communicating to the world.The studio is being taken care by Yes Media House. One of our goals is to empower young people out there, especial the local artist around cape town.We encourage people with positive spirit in action, offering effective and affordable opportunities to turn the world around by initially building 'youth of South Africa' and strong personal growth
         </p>
       </div>
     </div>
-    
+    <h3 class="sub2 text-black">Meet the team</h3>
   </div>
+
 </template>
 <script>
 export default {
@@ -50,7 +52,38 @@ h2{
   font-weight: 200;
 
 }
+#sub1{
+  position: absolute;
+  top:90%;
+  left:45%;
+}
 .Aboutpage{
   margin-bottom: 1000px;
 }
+.img-fluid{
+width: 500px;
+margin-top: 9%;
+margin-left: 10%;
+height: 400px;
+margin-bottom: 5%;
+}
+.paragraph-container{
+  position: absolute;
+  width: 500px;
+  left:55%;
+  top:800px;
+}
+.sub2{
+  position: absolute;
+  left:45%;
+  top: 1300px;
+
+}
+.flex-container{
+  background-color: rgb(0, 0, 0);
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-right: 7%;
+}
+
 </style>
