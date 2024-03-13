@@ -1,7 +1,7 @@
 <template>
     <div class="Contact">
 <div class="row">
-    <img src="../assets/contact.jpg" id="aboutImg" alt="aboutImg"> 
+    <img src="../assets/contact.jpg" id="aboutImg" loading="lazy" alt="aboutImg"> 
     <h2 class="display-2">Connect with us</h2>
 </div>
     </div>
