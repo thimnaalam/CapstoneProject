@@ -37,7 +37,7 @@
       <img src="../assets/pod.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Catch up</h5>
-        <p class="card-text">Catch up with the conversations we've and miss a day with us.</p>
+        <p class="card-text">Catch up with the conversations we've had and do not miss a day with us.</p>
       </div>
     </div>
   </div>

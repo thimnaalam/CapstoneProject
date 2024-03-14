@@ -33,10 +33,22 @@ const routes = [
     component: () => import('../views/EventsView.vue')
   },
   {
+    path: '/notifications',
+    name: 'notifications',
+    
+    component: () => import('../views/NotificationView.vue')
+  },
+  {
     path: '/contact',
     name: 'contact',
     
     component: () => import('../views/ContactView.vue')
+  },
+  {
+    path: '/loginRegister',
+    name: 'loginRegister',
+    
+    component: () => import('../views/loginRegisterView.vue')
   }
 ]
 

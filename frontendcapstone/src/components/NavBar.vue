@@ -36,8 +36,18 @@
            </RouterLink>
          </li>
          <li class="nav-item">
+             <RouterLink to="/notification" class="nav-link active text-white">
+                Notifications |
+           </RouterLink>
+         </li>
+         <li class="nav-item">
              <RouterLink to="/contact" class="nav-link active text-white">
-                 Contact
+                 Contact  |
+           </RouterLink>
+         </li>
+         <li class="nav-item">
+             <RouterLink to="/loginRegister" class="nav-link active text-white">
+                 Login / Register |
            </RouterLink>
          </li>
        </ul>  
@@ -58,5 +68,7 @@
     width: 10%;
     height: 10%;
  }
+
+
 
  </style>
