@@ -1,34 +1,37 @@
 <template>
   <div class="Aboutpage">
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="../assets/sli2.jpeg" class="d-block w-100" alt="...">
+      <img src="../assets/Khayelitsha_queer_community_01.jpg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="../assets/Sli1.jpg" class="d-block w-100" alt="...">
+      <img src="../assets/khayelitsha-wall-mural-breeze-yoko-cape-town-34c75cd74a03.avif" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="../assets/Sli3.webp" class="d-block w-100" alt="...">
+      <img src="../assets/resize.webp" class="d-block w-100" alt="...">
     </div>
   </div>
 </div>
-    <h2 class="text-white">About</h2>
+    <h2 class="text-black">About</h2>   
     <div class="flex-container">
-      <h3 class="text-white" id="sub1">Who are we?</h3>
+      <h3 class="text-black" id="sub1">Who are we?</h3>
       <!-- Image on the left -->
       <div class="image-container">
-        <img class="img-fluid" loading="lazy" src="../assets/image.webp" alt="Your Image">
+        <img class="img-fluid" loading="lazy" src="../assets/image.webp" alt=" Image">
       </div>
 
       <!-- Paragraphs on the right -->
       <div class="paragraph-container">
-        <p class="container text-white">
+        <p class="container text-black">
           Radio Khaltsha is by youth for youth.Number one youth radio station in Western Cape, based in Cape Town, Khayelitsha, the second biggest township in South Africa. Radio Khaltsha is owned by Yes Media House (Pty) Ltd in Khayelitsha.This initiative is by youth for youth. This radio station exist because of you (artists), to express yourself in an artistic way, we believe that every artist has his/her way of communicating to the world.The studio is being taken care by Yes Media House. One of our goals is to empower young people out there, especial the local artist around cape town.We encourage people with positive spirit in action, offering effective and affordable opportunities to turn the world around by initially building 'youth of South Africa' and strong personal growth
         </p>
       </div>
     </div>
     <h3 class="sub2 text-black">Meet the team</h3>
+    <div class="flex-container">
+
+    </div>
   </div>
 
 </template>
@@ -80,7 +83,6 @@ margin-bottom: 5%;
 
 }
 .flex-container{
-  background-color: rgb(0, 0, 0);
   margin-top: 5%;
   margin-left: 10%;
   margin-right: 7%;

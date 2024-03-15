@@ -2,6 +2,7 @@
     <body>
         <img src="../assets/contactback.jpg" id="loginR" alt="loginRImg">
   <div class="container-login">
+    <h2>Login</h2>
    <form id="LoginForm">
     <input type="Email" placeholder="Email" id="Email" required>
     <input type="Password" placeholder="Password" id="Password" required>
@@ -39,17 +40,16 @@ body, h2, form, input, button, p, a{
 }
 body{
     font-family: Arial, sans-serif;
+    margin-bottom: 6.5%;
   
 }
 .container-login, .container-register{
     position: absolute;
     width: 300px;
-    /* margin:50px auto; */
     padding: 20px;
     border: 1px solid rgb(202, 7, 7);
     border-radius: 5px;
     background-color:  rgba(6, 6, 6, 0.26);  
- 
     top:40%
 
 }
@@ -85,7 +85,7 @@ input[type="submit"]{
 
 }
 input[type="submit"]:hover{
-  background-color: rgb(1, 42, 1) ;
+  background-color: rgb(179, 105, 3) ;
 }
 p{
     margin: 15px;
@@ -104,6 +104,7 @@ a:hover{
     bottom:10%;
     left:60%;
     height:500px;
+    top:200px
    
     
 }
