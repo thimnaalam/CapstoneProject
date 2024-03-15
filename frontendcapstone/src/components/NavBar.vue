@@ -41,6 +41,11 @@
            </RouterLink>
          </li>
          <li class="nav-item">
+             <RouterLink to="/admin" class="nav-link active text-white">
+                 Admin  |
+           </RouterLink>
+         </li>
+         <li class="nav-item">
              <RouterLink to="/contact" class="nav-link active text-white">
                  Contact  |
            </RouterLink>
