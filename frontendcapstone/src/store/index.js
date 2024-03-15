@@ -1,19 +1,17 @@
 import { createStore } from "vuex";
 import axios from "axios";
 
-
-const DB = "https://nodedb-1.onrender.com/";
+// render link
+const DB = "";
 
   
 export default createStore({
   state: {
     users: null,
     user: null,
-    admins: null,
-    admin: null,
-    // selectedProduct: null,
-    // products: null,
-    // product: null,
+    selectedProduct: null,
+    products: null,
+    product: null,
   },
   getters: {},
   mutations: {
@@ -23,15 +21,15 @@ export default createStore({
     setUser(state, user) {
       state.user = user;
     },
-    setAdmins(state, admins) {
-      state.admins = admins;
+    setProducts(state, products) {
+      state.products = products;
     },
-    setAdmin(state, admin) {
-      state.admin = admin;
+    setProduct(state, product) {
+      state.product = product;
     },
-      // setSelectedProduct(state, product) {
-      //   state.selectedProduct = product;
-      // },
+      setSelectedProduct(state, product) {
+        state.selectedProduct = product;
+      },
   },
   actions: {
     async fetchUsers({ commit }) {
