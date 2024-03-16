@@ -11,11 +11,10 @@
             <thead class="text-dark bg-success">
             <tr>
                 <th>User ID</th>
-                <th>Name</th>
-                <th>LastName</th>
-                <th>Age</th>
-                <th>Gender</th>
+                <th>Firstname</th>
+                <th>Surname</th>
                 <th>Email</th>
+                <th>Type</th>
                 <th>Department</th>
                 <th>Action</th>
                
@@ -25,11 +24,11 @@
 
           <tr v-for="user in users" :key="user.id">
             <td>{{ user.userID }}</td>
-            <td>{{ user.firstName }}</td>
-            <td>{{ user.lastName }}</td>
-            <td>{{ user.userAge }}</td>
-            <td>{{ user.gender }}</td>
-            <td>{{ user.email }}</td>
+            <td>{{ user.Firstname }}</td>
+            <td>{{ user.Surname }}</td>
+            <td>{{ user.Type }}</td>
+            <td>{{ user.Department }}</td>
+            <td>{{ user.Email }}</td>
            
             <td>
               <div class="row1">
@@ -45,9 +44,9 @@
      <h2 class="display-5 text-dark  ">Products</h2>
      <table class="container ">
             <tr class="bg-success text-dark">
+              <th>Product ID</th>
                 <th>Image</th>
-                <th>Product ID</th>
-                <th>Name</th>   
+                <th>Type</th>   
                 <th>Category</th>
                 <th>Description</th>
                 <th>Action</th>
@@ -57,7 +56,8 @@
               <tr v-for="product in products" :key="product.prodID">
                 <td><img :src="product.prodUrl" style="height: 100px;" /></td> 
                 <td>{{ product.prodID }}</td>
-                <td>{{ product.prodName }}</td>
+                <td>{{ product.prodImage }}</td>
+                <td>{{ product.Type }}</td>
                 <td>{{ product.Category }}</td>
                 <td> R {{ product.Description }}</td>
                 <td>
