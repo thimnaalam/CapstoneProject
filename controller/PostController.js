@@ -1,12 +1,11 @@
-// Import necessary modules
-const Post = require('../model/dailyfeed.js');
+import { postController} from '../model/dailyfeed.js'
 
-// Controller for handling CRUD operations on posts
+
 const postController = {
-  // Get all posts
+// Get all posts
   getAllPosts: async (req, res) => {
     try {
-      const posts = await Post.find();
+      const posts = await posts.find();
       res.json(posts);
     } catch (error) {
       res.status(500).json({ error: 'Internal server error' });
@@ -16,7 +15,7 @@ const postController = {
   // Get a single post by ID
   getPostById: async (req, res) => {
     try {
-      const post = await Post.findById(req.params.id);
+      const post = await post.findById(req.params.id);
       if (!post) {
         return res.status(404).json({ error: 'Post not found' });
       }
@@ -66,5 +65,7 @@ const postController = {
     }
   }
 };
+export{
+postController
 
-module.exports = postController;
+}

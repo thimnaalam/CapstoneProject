@@ -2,14 +2,14 @@ import { connection as db } from "../config/index.js";
 import { hash, compare } from 'bcrypt'
 import { createToken } from "../middleware/UserAuthentication.js";
 
-class UserSignup{
+class Users{
     fetchUsers(req, res){
         const qry = `
         select
-        UserID, Firstname, Surname,
-        Email, CreatePassword, ConfirmPassword
+        userID, Firstname, Surname,
+        Email, UserType, Department, Pwd
         from
-        UserSignup;
+        Users;
         `
         db.query(qry, (err,results)=>{
 
@@ -22,9 +22,10 @@ class UserSignup{
     }
     fetchUser(req, res) {
         const qry = `
-            SELECT UserID, Firstname, Surname,
-            Email, CreatePassword, ConfirmPassword
-            FROM UserSignup
+            select
+            userID, Firstname, Surname,
+            Email, UserType, Department, Pwd 
+            FROM Users
             WHERE userID = ${req.params.id};
             `;
         db.query(qry, (err, result) => {
@@ -36,16 +37,16 @@ class UserSignup{
         })
       }
     
-        async createUser(req, res){
+  async createUser(req, res){
             // payload
             let data = req.body
-            data.ConfirmPassword = await hash(data?.ConfirmPassword, 10)
+            data.Pwd = await hash(data?.Pwd, 10)
             let user = {
                 Email: data.Email,
-                ConfirmPassword: data.ConfirmPassword
+                Pwd: data.Pwd
             }
             const qry = `
-            insert into UserSignup
+            insert into Users
             set ?;
             `
             db.query(qry, [data], (err)=>{
@@ -67,11 +68,11 @@ class UserSignup{
             }
   async updateUser(req, res) {
             const data = req.body;
-            if (data?.ConfirmPassword) {
-              data.ConfirmPassword = await hash(data.ConfirmPassword, 8);
+            if (data?.Pwd) {
+              data.Pwd = await hash(data.Pwd, 8);
             }
             const qry = `
-              UPDATE UserSignup
+              UPDATE Users
               SET ?
               WHERE userID = ?`;
             db.query(qry, [data, req.params.id], (err) => {
@@ -84,7 +85,7 @@ class UserSignup{
           }
   async deleteUser(req, res) {
             const qry = `
-              DELETE FROM UserSignup
+              DELETE FROM Users
               WHERE userID = ?`;
             db.query(qry, [req.params.id], (err) => {
               if (err) throw err;
@@ -95,11 +96,12 @@ class UserSignup{
             });
           }
  login(req, res){
-        const {Email, ConfirmPassword} = req.body
+        const {Email, Pwd} = req.body
         const qry = `
-        SELECT UserID, Firstname, Surname,
-        Email, CreatePassword, ConfirmPassword
-        FROM UserSignup
+        SELECT 
+        userID, Firstname, Surname,
+        Email, UserType, Department, Pwd
+        FROM Users
         WHERE Email = '${Email}';
         `
         db.query(qry, async(err, result)=>{
@@ -110,11 +112,11 @@ class UserSignup{
                     msg: "Wrong email address provided"
                 })
             }else{
-                const validPass = await compare(ConfirmPassword, result[0].ConfirmPassword)
+                const validPass = await compare(Pwd, result[0].Pwd)
                 if(validPass){
                     const token = createToken({
                         Email,
-                        ConfirmPassword
+                        Pwd
                     })
                     res.json({
                         status: res.statusCode,
@@ -132,5 +134,5 @@ class UserSignup{
         })
     }}
         export{
-          UserSignup
+          Users
         }
