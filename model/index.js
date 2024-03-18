@@ -1,10 +1,10 @@
-import { users } from "./users.js";
-import { admin } from "./admin.js";
+import { Users } from "./users.js";
+import { Products } from "./products.js";
 
 // create objects
-let Users = new users()
-let admin = new admin()
+let users = new Users()
+let products = new Products()
 export {
     users,
-    admin
+    products
 }
