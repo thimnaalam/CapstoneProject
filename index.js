@@ -32,11 +32,11 @@ app.use(
 )
 // Router -- where you going , app get from which is the /
 app.get('^/$|/CapstoneProject', (req, res)=>{
-    res.status(200).sendFile(path.join(__dirname,'./static/index.Html'))
+    res.status(200).sendFile(path.join(__dirname,'./static/index.html'))
 })
 app.use('/Users', userRouter)
 app.use('/Products', productRouter)
 app.use(errorHandling)
 app.listen(port, ()=>{
-    console.log(`Server is running on port https://localhost:${port}`);
+    console.log(`Server is running on port http://localhost:${port}`);
 })
