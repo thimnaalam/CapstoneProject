@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP Methods</title>
+</head>
+<body>
+    <h1>General Routing</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Path</th>
+                <th>HTTP Methods</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>/</td>
+                <td>GET</td>
+                <td>retrieve data from index.html</td>
+            </tr>
+        </thead>
+    </table>
+    <h1>HTTP Methods for Users</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Path</th>
+                <th>HTTP Methods</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>/</td>
+                <td>GET</td>
+                <td>Retrieves a list of users.</td>
+            </tr>
+            <tr>
+                <td>/register</td>
+                <td>POST</td>
+                <td>Creates a new user.</td>
+            </tr>
+            <tr>
+                <td>/update/:id</td>
+                <td>PATCH</td>
+                <td>Updates details of a specific user.</td>
+            </tr>
+            <tr>
+                <td>/users/:id</td>
+                <td>DELETE</td>
+                <td>Deletes a specific user.</td>
+            </tr>
+            <tr>
+                <td>/login</td>
+                <td>POST</td>
+                <td>Log user in.</td>
+            </tr>
+            <tr>
+                <td>/logout</td>
+                <td>POST</td>
+                <td>Log user out.</td>
+            </tr>
+        </tbody>
+    </table>
+    <h1>HTTP Methods for Products</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Path</th>
+                <th>HTTP Methods</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>/</td>
+                <td>GET</td>
+                <td>Retrieves a list of shop.</td>
+            </tr>
+            <tr>
+                <td>/:id</td>
+                <td>GET</td>
+                <td>Retrieves details of a specific product.</td>
+            </tr>
+            <tr>
+                <td>/addProduct</td>
+                <td>POST</td>
+                <td>Creates a new product.</td>
+            </tr>
+            <tr>
+                <td>/updateProduct/:id</td>
+                <td>PATCH</td>
+                <td>Updates details of a specific product.</td>
+            </tr>
+            <tr>
+                <td>/delete/:id</td>
+                <td>DELETE</td>
+                <td>Deletes a specific product.</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
