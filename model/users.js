@@ -16,6 +16,7 @@ class Users{
             if(err) throw err
             res.json({
              status: res.statusCode,
+             msg: "Failed to fetch Users",
              results
             })
         })

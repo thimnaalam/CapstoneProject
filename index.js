@@ -9,7 +9,7 @@ import { config } from "dotenv";
 config()
 
 const app = express()
-const port = +process.env.PORT || 4000
+const port = +process.env.PORT || 7700
  
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
@@ -34,8 +34,8 @@ app.use(
 app.get('^/$|/CapstoneProject', (req, res)=>{
     res.status(200).sendFile(path.join(__dirname,'./static/index.Html'))
 })
-app.use('/users', userRouter)
-app.use('/products', productRouter)
+app.use('/Users', userRouter)
+app.use('/Products', productRouter)
 app.use(errorHandling)
 app.listen(port, ()=>{
     console.log(`Server is running on port https://localhost:${port}`);
