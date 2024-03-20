@@ -2,7 +2,7 @@ import { createStore } from "vuex";
 import axios from "axios";
 
 // render link
-const DB = "";
+const DB = "https://capstoneproject-2.onrender.com/";
 
   
 export default createStore({

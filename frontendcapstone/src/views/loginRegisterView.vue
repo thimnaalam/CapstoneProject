@@ -8,7 +8,7 @@
     <input type="Password" placeholder="Password" id="Password" required>
     <button type="submit">Login</button>
    </form>
-     <p>Don't have an account? <a href="register.html"></a>Register here</p>
+     <!-- <p>Don't have an account? <a href="register.html"></a>Register here</p> -->
   </div>
    <h1 class="text-center">OR</h1>
   <div class="container-register">
@@ -21,7 +21,7 @@
     <input type="ConfirmPassword" placeholder="ConfirmPassword" id="ConfirmPassword" required>
     <button type="submit">Register</button>
    </form>
-    <p>Already have an account? <a href="Login.html"></a>Login here</p>
+    <!-- <p>Already have an account? <a href="Login.html"></a>Login here</p> -->
   </div>
    
 </body>    
