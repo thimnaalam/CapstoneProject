@@ -53,7 +53,7 @@
         <tr v-for="product in products" :key="product.id">
           <td>{{ product.prodID }}</td>
           <td>{{ product.ProdType }}</td>
-          <td>{{ product.Category }}</td>
+          <td>{{ product.Catorgory }}</td>
           <td>{{ product.Descriptions }}</td>
           <td>{{ product.userID }}</td>
              <!-- SVG icon button for editing -->
