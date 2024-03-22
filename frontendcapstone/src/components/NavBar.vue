@@ -36,11 +36,6 @@
            </RouterLink>
          </li>
          <li class="nav-item">
-             <RouterLink to="/notification" class="nav-link active text-white">
-                Notifications |
-           </RouterLink>
-         </li>
-         <li class="nav-item">
              <RouterLink to="/admin" class="nav-link active text-white">
                  Admin  |
            </RouterLink>
