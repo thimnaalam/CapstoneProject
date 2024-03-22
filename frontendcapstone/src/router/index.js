@@ -33,12 +33,6 @@ const routes = [
     component: () => import('../views/EventsView.vue')
   },
   {
-    path: '/notifications',
-    name: 'notifications',
-    
-    component: () => import('../views/NotificationView.vue')
-  },
-  {
     path: '/admin',
     name: 'admin',
     
