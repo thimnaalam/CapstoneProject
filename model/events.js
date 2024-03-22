@@ -1,8 +1,7 @@
-
 import { connection as Db } from "../config/index.js";
 
-const Events = {
-  getAll: () => {
+class Events {
+  static getAll() {
     return new Promise((resolve, reject) => {
       const qry = `
         SELECT 
@@ -17,9 +16,9 @@ const Events = {
         }
       });
     });
-  },
+  }
 
-  getById: (eventID) => {
+  static getById(eventID) {
     return new Promise((resolve, reject) => {
       const qry = `
         SELECT
@@ -35,9 +34,9 @@ const Events = {
         }
       });
     });
-  },
+  }
 
-  create: (eventData) => {
+  static create(eventData) {
     return new Promise((resolve, reject) => {
       const { Title, Dates, Descriptions, Category } = eventData;
       const qry = `
@@ -52,9 +51,9 @@ const Events = {
         }
       });
     });
-  },
+  }
 
-  update: (eventID, eventData) => {
+  static update(eventID, eventData) {
     return new Promise((resolve, reject) => {
       const { Title, Dates, Descriptions, Category } = eventData;
       const qry = `
@@ -70,9 +69,9 @@ const Events = {
         }
       });
     });
-  },
+  }
 
-  delete: (eventID) => {
+  static delete(eventID) {
     return new Promise((resolve, reject) => {
       const qry = `
         DELETE FROM Events
@@ -88,6 +87,7 @@ const Events = {
     });
   }
 }
+
 export {
-     Events
-}
+  Events
+};
