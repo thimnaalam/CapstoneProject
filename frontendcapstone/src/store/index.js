@@ -12,6 +12,7 @@ export default createStore({
     selectedProduct: null,
     products: null,
     product: null,
+    events: null
   },
   getters: {},
   mutations: {
@@ -30,6 +31,9 @@ export default createStore({
       setSelectedProduct(state, product) {
         state.selectedProduct = product;
       },
+    setEvents(state, values) {
+      state.events = values
+    }
   },
   actions: {
     async fetchUsers({ commit }) {
@@ -139,6 +143,18 @@ export default createStore({
         alert("An error occurred while deleting the product");
       }
     },
+    async fetchEvents(context){
+      try{
+        const {results} = (await axios.get(`${DB}events`)).data 
+        if(results) {
+          context.commit('setEvents')
+        }else {
+          // Make use of sweet alert or a component
+        }
+      }catch(e) {
+        //
+      }
+    }
   },
   modules: {
   }

@@ -6,6 +6,10 @@
           <h2 class="display-2" id="Events1">Events</h2>
         </div>
       </div>
+      <div class="row" v-for="event in events" :key="event.EventID">
+        <p>{{event.EventID}} - {{ event.Title  }}</p>
+
+      </div>
    <div>
     <h2 @click="scrollTo('upcomingEvents')">Upcoming Events</h2>
     <h2 @click="scrollTo('pastEvents')">Past Events</h2>
@@ -51,6 +55,11 @@ export default {
       pastEvents: [] // Array to hold past events data
     };
   },
+  computed: {
+    events() {
+      return this.$store.state.events
+    }
+  },
   methods: {
     // Method to scroll to a specific section using element ID
     scrollTo(id) {
@@ -64,7 +73,8 @@ export default {
   },
   mounted() {
     // Fetch events data when the component is mounted
-    this.fetchEvents();
+    // etchEthis.fvents();
+    this.$store.dispatch('fetchEvents')
   }
 };
 </script>
