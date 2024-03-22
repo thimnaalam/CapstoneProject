@@ -2,7 +2,7 @@ import { connection as Db } from "../config/index.js";
 class Events{
     fetchEvents(req, res){
         const qry = `
-        select EventID, Title, Dates, Catorgory, Descriptions, userID
+        select EventID, Title, Dates, Category, Descriptions, userID
         from Events;
         `
         Db.query(qry, (err, results) => {
@@ -15,7 +15,7 @@ class Events{
     }
     fetchEvent(req, res){
         const qry = `
-        select EventID, Title, Dates, Catorgory, Descriptions, userID
+        select EventID, Title, Dates, Category, Descriptions, userID
         from Events;
         where EventID = ${req.params.id}`
 
