@@ -1,7 +1,7 @@
 // ES
 import { userRouter, express} from "./controller/userController.js";
 import { productRouter } from "./controller/ProductController.js";
-import { eventController } from "./controller/eventController.js";
+import { eventRouter } from "./controller/eventController.js";
 import cookieParser from "cookie-parser";
 import { errorHandling } from "./middleware/errorHandling.js";
 import path from 'path'
@@ -37,7 +37,7 @@ app.get('^/$|/CapstoneProject', (req, res)=>{
 })
 app.use('/Users', userRouter)
 app.use('/Products', productRouter)
-app.use('/Events', eventController)
+app.use('/Events', eventRouter)
 app.use(errorHandling)
 app.listen(port, ()=>{
     console.log(`Server is running on port http://localhost:${port}`);

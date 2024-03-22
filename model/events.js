@@ -1,93 +1,45 @@
 import { connection as Db } from "../config/index.js";
+class Events{
+    fetchEvents(req, res){
+        const qry = `
+        select eventID, Title, Dates, Catorgory, Descriptions, userID
+        from Events;
+        `
+        Db.query(qry, (err, results) => {
+            if(err) throw err;
+            res.json({
+                status: res.statusCode, 
+                results
+            })
+        })
+    }
+    fetchEvent(req, res){
+        const qry = `
+        select eventID, Title, Dates, Catorgory, Descriptions, userID
+        from Events;
+        where eventID = ${req.params.id}`
 
-class Events {
-  static getAll() {
-    return new Promise((resolve, reject) => {
-      const qry = `
-        SELECT 
-        eventID, Title, Dates, Descriptions, Category, userID
-        FROM Events;
-      `;
-      Db.query(qry, (err, results) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(results);
-        }
-      });
-    });
-  }
+        Db.query(qry, (err, results) => {
+            if(err) throw err;
+            res.json({
+                status: res.statusCode, 
+                results
+            })
+        })
+    }
+    addEvent(req, res){
+        const qry = `insert into Events set ?;`
 
-  static getById(eventID) {
-    return new Promise((resolve, reject) => {
-      const qry = `
-        SELECT
-         eventID, Title, Dates, Descriptions, Category, userID
-        FROM Events
-        WHERE eventID = ${eventID};
-      `;
-      Db.query(qry, (err, results) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(results[0]);
-        }
-      });
-    });
-  }
+        Db.query(qry,[req.body] ,(err) => {
+            if(err) throw err;
+            res.json({
+                status: res.statusCode, 
+                message: 'Event successfully added'
+            })
 
-  static create(eventData) {
-    return new Promise((resolve, reject) => {
-      const { Title, Dates, Descriptions, Category } = eventData;
-      const qry = `
-        INSERT INTO vents (title, date, description, category)
-        VALUES ('${Title}', '${Dates}', '${Descriptions}', '${Category}');
-      `;
-      Db.query(qry, (err, results) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(results.insertId);
-        }
-      });
-    });
-  }
+    })
+}}
 
-  static update(eventID, eventData) {
-    return new Promise((resolve, reject) => {
-      const { Title, Dates, Descriptions, Category } = eventData;
-      const qry = `
-        UPDATE Events
-        SET Title = '${Title}', Dates = '${Dates}', Descriptions = '${Descriptions}', Category = '${Category}'
-        WHERE eventID = ${eventID};
-      `;
-      Db.query(qry, (err, results) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(results.affectedRows > 0);
-        }
-      });
-    });
-  }
-
-  static delete(eventID) {
-    return new Promise((resolve, reject) => {
-      const qry = `
-        DELETE FROM Events
-        WHERE eventID = ${eventID};
-      `;
-      Db.query(qry, (err, results) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(results.affectedRows > 0);
-        }
-      });
-    });
-  }
+export{
+    Events
 }
-
-export {
-  Events
-};

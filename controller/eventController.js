@@ -1,30 +1,32 @@
-import express from 'express';
-import { Events } from '../models/events.js'; // Import the Events object
+import { events } from '../model/index.js'
+import express from 'express'
+import bodyParser from 'body-parser'
 
-const router = express.Router();
+const eventRouter = express.Router()
 
-// Define routes using Events methods as middleware
-router.get('/events', async (req, res) => {
-  try {
-    const allEvents = await Events.getAll();
-    res.json(allEvents);
-  } catch (error) {
-    res.status(500).json({ error: 'Internal server error' });
-  }
-});
 
-router.get('/events/:id', async (req, res) => {
-  try {
-    const event = await Events.getById(req.params.id);
-    if (!event) {
-      return res.status(404).json({ error: 'Event not found' });
+eventRouter.get('/', (req, res)=>{
+    try{
+        events.fetchEvents(req, res)
+    }catch(e){
+        res.json({
+            status: res.statusCode,
+            msg: 'Failed to retrieve events'
+        })
     }
-    res.json(event);
-  } catch (error) {
-    res.status(500).json({ error: 'Internal server error' });
-  }
-});
+})
 
-// Other routes...
+eventRouter.get('/:id', (req, res)=>{
+    try{
+        events.fetchEvents(req, res)
+    }catch(e){
+        res.json({
+            status: res.statusCode,
+            msg: 'Failed to retrieve a event'
+        })
+    }
+})
 
-export default router;
+export{
+    eventRouter
+}

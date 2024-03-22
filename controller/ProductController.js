@@ -1,4 +1,4 @@
-import { Products } from '../model/products.js'
+import { products } from '../model/index.js'
 import express from 'express'
 import bodyParser from 'body-parser'
 
@@ -7,7 +7,7 @@ const productRouter = express.Router()
 // Fetch all products
 productRouter.get('/', (req, res)=>{
     try{
-        users.fetchProducts(req, res)
+        products.fetchProducts(req, res)
     }catch(e){
         res.json({
             status: res.statusCode,
@@ -18,7 +18,7 @@ productRouter.get('/', (req, res)=>{
 //  Fetch product 
 productRouter.get('/:id', (req, res)=>{
     try{
-        users.fetchProduct(req, res)
+        products.fetchProduct(req, res)
     }catch(e){
         res.json({
             status: res.statusCode,
@@ -28,7 +28,5 @@ productRouter.get('/:id', (req, res)=>{
 })
 
 export{
-    Products,
-    productRouter,
-    bodyParser
+    productRouter
 }

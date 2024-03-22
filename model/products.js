@@ -1,5 +1,4 @@
 import { connection as Db } from "../config/index.js";
-
 class Products{
     fetchProducts(req, res){
         const qry = `
