@@ -95,7 +95,7 @@ export default {
   font-style: italic;
 }
 
-.event-card {
+/* .event-card {
 
-}
+} */
 </style>

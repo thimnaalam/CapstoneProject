@@ -20,12 +20,6 @@
            </RouterLink>
          </li>
          <li class="nav-item">
-             <RouterLink to="/dailyFeed" class="nav-link active text-white">
-                DailyFeed |
-           </RouterLink>
-         </li>
-
-         <li class="nav-item">
              <RouterLink to="/Podcast" class="nav-link active text-white">
                 Podcast |
            </RouterLink>
@@ -45,15 +39,10 @@
                  Contact  |
            </RouterLink>
          </li>
-        <li v-if="noUserLoggedInShow" class="nav-item">
+        <li class="nav-item">
             <router-link to="/loginRegister" class="nav-link text-white">
               Login/Register
             </router-link>
-          </li>
-          <li v-if="someoneLoggedInShow" class="nav-item">
-            <button @click="logout" class="nav-link text-white">
-              Logout
-            </button>
           </li>
        </ul>  
      </div>
