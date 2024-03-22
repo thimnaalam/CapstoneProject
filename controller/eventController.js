@@ -18,7 +18,7 @@ eventRouter.get('/', (req, res)=>{
 
 eventRouter.get('/:id', (req, res)=>{
     try{
-        events.fetchEvents(req, res)
+        events.fetchEvent(req, res)
     }catch(e){
         res.json({
             status: res.statusCode,
