@@ -45,11 +45,16 @@
                  Contact  |
            </RouterLink>
          </li>
-         <li class="nav-item">
-             <RouterLink to="/loginRegister" class="nav-link active text-white">
-                 Login / Register |
-           </RouterLink>
-         </li>
+        <li v-if="noUserLoggedInShow" class="nav-item">
+            <router-link to="/loginRegister" class="nav-link text-white">
+              Login/Register
+            </router-link>
+          </li>
+          <li v-if="someoneLoggedInShow" class="nav-item">
+            <button @click="logout" class="nav-link text-white">
+              Logout
+            </button>
+          </li>
        </ul>  
      </div>
    </div>

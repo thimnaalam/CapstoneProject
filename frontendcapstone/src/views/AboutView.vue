@@ -99,6 +99,8 @@ h2{
   position: absolute;
   top:90%;
   left:45%;
+ 
+  
 }
 .Aboutpage{
   margin-bottom: 1000px;
