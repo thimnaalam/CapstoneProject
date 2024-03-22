@@ -15,7 +15,9 @@
 </div>
     <h2 class="text-black">About</h2>   
     <div class="flex-container">
-      <h3 class="text-black" id="sub1">Who are we?</h3>
+      <div class="title">  
+        <h3 class="text-black" id="sub1">Who are we?</h3>
+      </div>
       <!-- Image on the left -->
       <div class="image-container">
         <img class="img-fluid" loading="lazy" src="../assets/image.webp" alt=" Image">
@@ -30,7 +32,44 @@
     </div>
     <h3 class="sub2 text-black">Meet the team</h3>
     <div class="flex-container">
-
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card">
+      <img src="../assets/download (1).jpeg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Thalitha Sika</h5>
+        <p class="card-text">Creative director</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="../assets/download (2).jpeg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Siyaxola Anganathi</h5>
+        <p class="card-text">Sports Presenter</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="../assets/download.jpeg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Calvin, Momo, Nkosi</h5>
+        <p class="card-text">Sound engineering team</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="../assets/images (1).jpeg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">King Zweli</h5>
+        <p class="card-text">Station director</p>
+      </div>
+    </div>
+  </div>
+</div>
     </div>
   </div>
 
@@ -55,6 +94,7 @@ h2{
   font-weight: 200;
 
 }
+
 #sub1{
   position: absolute;
   top:90%;
@@ -79,13 +119,16 @@ margin-bottom: 5%;
 .sub2{
   position: absolute;
   left:45%;
-  top: 1300px;
+  top: 1200px;
 
 }
 .flex-container{
   margin-top: 5%;
   margin-left: 10%;
   margin-right: 7%;
+}
+.card{
+width: 300px;
 }
 
 </style>

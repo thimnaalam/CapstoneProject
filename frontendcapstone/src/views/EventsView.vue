@@ -22,8 +22,8 @@
       <div v-if="showUpcoming">
         <div v-for="event in upcomingEvents" :key="event.id" class="event-card">
           <!-- Display event details here -->
-          <div>{{ event.title }}</div>
-          <div>{{ event.date }}</div>
+          <div>{{ event.Title }}</div>
+          <div>{{ event.Dates }}</div>
         </div>
       </div>
     </div>
@@ -34,8 +34,8 @@
       <div v-if="!showUpcoming">
         <div v-for="event in pastEvents" :key="event.id" class="event-card">
           <!-- Display event details here -->
-          <div>{{ event.title }}</div>
-          <div>{{ event.date }}</div>
+          <div>{{ event.Title }}</div>
+          <div>{{ event.Dates }}</div>
         </div>
       </div>
     </div>
