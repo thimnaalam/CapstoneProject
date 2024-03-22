@@ -15,12 +15,6 @@ const routes = [
     component: () => import('../views/AboutView.vue')
   },
   {
-    path: '/dailyfeed',
-    name: 'dailyfeed',
-    
-    component: () => import('../views/DailyFeed.vue')
-  },
-  {
     path: '/podcast',
     name: 'podcast',
     
