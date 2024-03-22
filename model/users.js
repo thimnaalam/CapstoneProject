@@ -1,4 +1,4 @@
-import { connection as db } from "../config/index.js";
+import { connection as Db } from "../config/index.js";
 import { hash, compare } from 'bcrypt'
 import { createToken } from "../middleware/UserAuthentication.js";
 
@@ -11,7 +11,7 @@ class Users{
         from
         Users;
         `
-        db.query(qry, (err,results)=>{
+        Db.query(qry, (err,results)=>{
 
             if(err) throw err
             res.json({
@@ -29,7 +29,7 @@ class Users{
             FROM Users
             WHERE userID = ${req.params.id};
             `;
-        db.query(qry, (err, result) => {
+            Db.query(qry, (err, result) => {
           if (err) throw err;
           res.json({
             status: res.statusCode,
@@ -50,7 +50,7 @@ class Users{
             insert into Users
             set ?;
             `
-            db.query(qry, [data], (err)=>{
+            Db.query(qry, [data], (err)=>{
                 if(err) {
                     res.json({
                         status: res.statusCode,
@@ -76,7 +76,7 @@ class Users{
               UPDATE Users
               SET ?
               WHERE userID = ?`;
-            db.query(qry, [data, req.params.id], (err) => {
+              Db.query(qry, [data, req.params.id], (err) => {
               if (err) throw err;
               res.json({
                 status: res.statusCode,
@@ -88,7 +88,7 @@ class Users{
             const qry = `
               DELETE FROM Users
               WHERE userID = ?`;
-            db.query(qry, [req.params.id], (err) => {
+              Db.query(qry, [req.params.id], (err) => {
               if (err) throw err;
               res.json({
                 status: res.statusCode,
@@ -105,7 +105,7 @@ class Users{
         FROM Users
         WHERE Email = '${Email}';
         `
-        db.query(qry, async(err, result)=>{
+        Db.query(qry, async(err, result)=>{
             if (err) throw err
             if(!result?.length){
                 res.json({

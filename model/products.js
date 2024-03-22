@@ -1,4 +1,4 @@
-import { connection as db } from "../config/index.js";
+import { connection as Db } from "../config/index.js";
 
 class Products{
     fetchProducts(req, res){
@@ -6,7 +6,7 @@ class Products{
         select ProdID, ProdType, Catorgory, Descriptions, userID
         from Products;
         `
-        db.query(qry, (err, results) => {
+        Db.query(qry, (err, results) => {
             if(err) throw err;
             res.json({
                 status: res.statusCode, 
@@ -20,7 +20,7 @@ class Products{
         from Products
         where prodID = ${req.params.id}`
 
-        db.query(qry, (err, results) => {
+        Db.query(qry, (err, results) => {
             if(err) throw err;
             res.json({
                 status: res.statusCode, 
@@ -31,7 +31,7 @@ class Products{
     addProduct(req, res){
         const qry = `insert into Products set ?;`
 
-        db.query(qry,[req.body] ,(err) => {
+        Db.query(qry,[req.body] ,(err) => {
             if(err) throw err;
             res.json({
                 status: res.statusCode, 
