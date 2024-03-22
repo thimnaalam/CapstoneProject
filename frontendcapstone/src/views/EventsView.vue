@@ -6,6 +6,15 @@
           <h2 class="display-2" id="Events1">Events</h2>
         </div>
       </div>
+      <div v-if="events">
+        <div class="row" v-for="event in events" :key="event.EventID">
+          <p>{{event.EventID}} - {{ event.Title  }}</p>
+  
+        </div>
+      </div>
+      <div v-else>
+        <Spinner/>
+      </div>
    <div>
     <h2 @click="scrollTo('upcomingEvents')">Upcoming Events</h2>
     <h2 @click="scrollTo('pastEvents')">Past Events</h2>
@@ -43,28 +52,36 @@
 </div>
 </template>
 <script>
+import Spinner from '@/components/Spinner.vue';
 export default {
+  components: {
+    Spinner
+  },
   data() {
     return {
-      showUpcoming: true, // Indicates whether to show upcoming events or past events
-      upcomingEvents: [], // Array to hold upcoming events data
-      pastEvents: [] // Array to hold past events data
+      showUpcoming: true, 
+      upcomingEvents: [], 
+      pastEvents: [] 
     };
   },
+  computed: {
+    events() {
+      return this.$store.state.events
+    }
+  },
   methods: {
-    // Method to scroll to a specific section using element ID
+   
     scrollTo(id) {
       document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
     },
-    // Method to fetch events data (you can replace this with your actual API call)
+    
     fetchEvents() {
-      // Assume you have a method to fetch events data from your backend
-      // and update the upcomingEvents and pastEvents arrays accordingly
+     
     }
   },
   mounted() {
-    // Fetch events data when the component is mounted
-    this.fetchEvents();
+ 
+    this.$store.dispatch('fetchEvents')
   }
 };
 </script>
@@ -77,8 +94,8 @@ export default {
   color: white;
   font-style: italic;
 }
-/* Add your styles for event cards and other elements here */
-.event-card {
-  /* Styles for event cards */
-}
+
+/* .event-card {
+
+} */
 </style>
